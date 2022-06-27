@@ -9,10 +9,14 @@
   margin: 50px auto;
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  border-bottom: 15px solid green;
+  background: linear-gradient(#87ceeb, #e0f6ff);
 }
 .pipe {
   position: absolute;
   bottom: 0;
+  height: 100px;
   width: 80px;
   animation: pipe-animation 2s infinite linear;
 }
@@ -22,7 +26,28 @@
   width: 150px;
 }
 .jump {
-  animation: mario-jump 650ms infinite ease-out;
+  animation: mario-jump 500ms infinite ease-out;
+}
+.clouds {
+  position: absolute;
+  width: 550px;
+  animation: clouds-animation 10s infinite linear;
+}
+@media (max-width: 1000px) {
+  .pipe {
+    animation: pipe-animation 1.5s infinite linear;
+  }
+  .clouds {
+    animation: clouds-animation 7.5s infinite linear;
+  }
+}
+@media (max-width: 750px) {
+  .pipe {
+    animation: pipe-animation 1s infinite linear;
+  }
+  .clouds {
+    animation: clouds-animation 5s infinite linear;
+  }
 }
 @keyframes pipe-animation {
   from {
@@ -32,21 +57,26 @@
     right: 100%;
   }
 }
+@keyframes clouds-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
 @keyframes mario-jump {
   0% {
     bottom: 0;
   }
-  42.5% {
-    bottom: 180px;
-  }
   50% {
-    bottom: 180px;
+    bottom: 200px;
   }
   57.5% {
-    bottom: 175px;
+    bottom: 195px;
   }
   60% {
-    bottom: 165px;
+    bottom: 185px;
   }
   100% {
     bottom: 0;
