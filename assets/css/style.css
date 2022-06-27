@@ -12,6 +12,7 @@
   max-width: 1200px;
   border-bottom: 15px solid green;
   background: linear-gradient(#87ceeb, #e0f6ff);
+  border-radius: 10px;
 }
 .pipe {
   position: absolute;
